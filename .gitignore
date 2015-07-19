@@ -1,0 +1,7 @@
+target
+test-output
+apidocs
+apidocs.json
+.classpath
+.project
+.settings
