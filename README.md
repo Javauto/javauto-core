@@ -11,13 +11,14 @@ Javauto is a programming language for automation. Derived from Java, it is a cro
 * Gitter.im chats: [javauto-core](https://gitter.im/Javauto/javauto-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge#) 
 * StackOverflow: questions with the [javauto](http://stackoverflow.com/questions/tagged/javauto) tag
 * Syntax highlighting and auto completion for Javauto files in [Notepad++](https://github.com/Javauto/javauto-notepad-plusplus) 
+* If you're looking to report a bug, please use the [issue tracker](https://github.com/Javauto/javauto-core/issues).
 
 #Projects Using Javauto
 
 * [adbutil](https://github.com/ohtejera/adbutil) - A simple Javauto (cross platform) wrapper around Android Debug Bridge to enable multi device support. 
 * [ImperiusGeorge Client](https://github.com/ohtejera/JavautoImperiusGeorge) - A test automation library which drives off the UI of Android native applications.
 
-If you're looking to report a bug, please use the [issue tracker](https://github.com/Javauto/javauto-core/issues).
+
 
 #License
 
