@@ -17,7 +17,7 @@ Javauto is a programming language for automation. Derived from Java, it is a cro
 * [adbutil](https://github.com/ohtejera/adbutil) - A simple Javauto (cross platform) wrapper around Android Debug Bridge to enable multi device support. 
 * [ImperiusGeorge Client](https://github.com/ohtejera/JavautoImperiusGeorge) - A test automation library which drives off the UI of Android native applications.
 
-If you're looking to report a bug, please use the [issue tracker](https://github.com/Javauto/javauto-core/issues) in GitHub.
+If you're looking to report a bug, please use the [issue tracker](https://github.com/Javauto/javauto-core/issues).
 
 #License
 
