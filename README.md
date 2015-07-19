@@ -1,11 +1,11 @@
 #Javauto
 
-[![Join the chat at https://gitter.im/Javauto/javauto-core](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Javauto/javauto-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Javauto is a programming language for automation. Derived from Java, it is a cross platform alternative to something like AutoIt.
 
 Website: http://javauto.org/
 
-![build](https://travis-ci.org/Javauto/javauto-core.svg)
+![build](https://travis-ci.org/Javauto/javauto-core.svg) [![Join the chat at https://gitter.im/Javauto/javauto-core](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Javauto/javauto-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 #Installing
 Detailed install & getting started instructions: http://javauto.org/docs/getting-started.html
