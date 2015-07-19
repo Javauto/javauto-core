@@ -1,0 +1,6 @@
+global String var; // let the compiler know it's global
+var = "A variable";
+func void printVar() {
+	print(var); // print our var
+}
+printVar();

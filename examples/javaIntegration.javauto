@@ -1,0 +1,9 @@
+import java.util.Date;
+
+//both of the below are valid
+System.out.println("Printing with Java");
+print("Printing with Javauto");
+
+Date date = new Date();
+// display time and date using toString()
+System.out.println(date.toString());

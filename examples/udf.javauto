@@ -1,0 +1,31 @@
+//User Defined Functions
+
+// Define a function to move the mouse to random coordinates.
+// This function is void, meaning it doesn't return any value.
+func void randomMouseMove() {
+	int x = intGetRandom(0, 500); // get a random int for x
+	int y = intGetRandom(0, 500); // get a random int for y
+	mouseMove(x,y); // move the mouse to these generated coordinates
+}
+
+msgBox("Moving the mouse to random coordinates...");
+randomMouseMove(); // execute the function
+
+
+// This function tells us whether the mouse
+// is on the left side of the screen.
+func boolean isLeft() {
+	int xCoord = cursorGetPos()[0]; // get the x mouse position
+
+	if (xCoord < (SCREEN_WIDTH / 2)) { // if we're left of the half way point
+		return true;
+	} else {
+		return false;
+	}
+}
+
+if (isLeft()) {
+	print("The cursor is on the left side of the screen.");
+} else {
+	print("The cursor is not on the left side of the screen.");
+}

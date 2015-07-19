@@ -1,0 +1,19 @@
+// define two arrays
+String[] strArr = {"each", "of", "these", "is", "an", "element"};
+int[] intArr =    {0, 1, 1, 2, 3, 5, 8, 13, 21, 34};
+
+print( strArr[0] ); // print the first element of the string array
+strArr[0] = "new!"; // change the first element
+print( strArr[0] ); // print it again
+
+// we can get the size of the array with .length
+int strArrSize = strArr.length; // this will return 6, there are six elements
+
+// print the last element
+print( strArr[strArrSize-1] ); // the last element is one less than the length
+
+// print everything in the intArray
+print("Index\tValue");
+for (int i = 0; i < intArr.length; i++) {
+	print( toString(i) + "\t" + toString( intArr[i] ) );
+}

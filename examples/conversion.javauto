@@ -1,0 +1,5 @@
+String input = input("Enter a number: "); // get their number as a string
+int number = toInt(input); // get number as an int
+print(input + " + 5 = " + toString(number + 5)); // add five to it and display as string
+print(number/2); // divide number by 2 (will return an integer)
+print(toDouble(number)/2); // convert number to double and then divide

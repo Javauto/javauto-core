@@ -1,0 +1,37 @@
+int a = -1;
+if (a > 0) {
+    print( "%s is positive!" % ( toString(a) ) );
+} else if (a < 0) {
+	print( "%s is negative!" % ( toString(a) ) );
+} else {
+    // if it isn't positive or negative it's 0
+    print( "%s is zero" % ( toString(a) ) );
+}
+
+
+String name = "john";
+if (name == "john") { // this compares the two addresses in memory, will not always be true
+	print("This will not always happen");
+} 
+if (name.equals("john")) { // this compares the contents of the string, will equal true
+	print("This should always happend");
+}
+
+
+int i = 0;
+while ( i <= 5 ) {
+	print(i);
+	i = i + 1; // add one to i
+}
+
+for (int c = 0; c <= 5; c++) {
+	print(c);
+}
+
+String[] alpha = {"a","b","c","d","e","f"};
+for (String letter : alpha) {
+	print(letter);
+}
+
+
+

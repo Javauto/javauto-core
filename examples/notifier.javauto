@@ -1,0 +1,29 @@
+//Check program arguments.
+if(args.length  == 0){ 
+     printHelp();	
+}
+
+if (!isFlagged(args, "-u") || !isFlagged(args, "-p") ) {
+     printHelp();
+} 
+
+do { 
+     notify(getFlaggedArg(args, "-u"));
+     sleep(toInt(getFlaggedArg(args, "-p")));
+} while(true);
+
+// Print program help and exit.
+func void printHelp(){ 
+     print("Usage: notifier.jar -u URL -p Time (Inserts a fixed delay between httpGet [milliseconds])");
+     print("Example: java -jar notifier.jar -u http://www.javauto.org -p 1000 ");
+     System.exit(0);
+}  
+
+func void notify(String url){
+     String response = httpGet(url);
+     if(response.isEmpty()){
+	    print( "[ERROR] %s is not reachable! You may panic now." % (url) );
+     } else { 
+	    print( "[OK] %s is online" % (url));
+     }
+}

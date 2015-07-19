@@ -1,0 +1,7 @@
+int a = 10;
+int b = 3;
+
+print("10 + 3 = " + (a + b)); // add the two
+print("10 x 3 = " + (a * b)); // multiply the two
+print("10 / 3 = " + (a / b)); // divide the two, since the result is in int it will be truncated, so instead of 3.333333333 it returns 3
+print("10 % 3 = " + (a % b)); // get the remainder. 10 divided by 3 has a remainder of 1

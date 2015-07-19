@@ -1,0 +1,3 @@
+String name = "John";
+String greeting = "Hello %s, I'm %s." % (name, "Javauto");
+print(greeting);

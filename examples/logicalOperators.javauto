@@ -1,0 +1,26 @@
+int     a = 10;
+int     b = 3;
+int     c = 3;
+boolean bool = true;
+
+print(a > b); // 10 > 3 => true
+print(b < a); // 3 < 10 => true
+print(b > c); // 3 is not greater than 3 => false
+print(b == c); // 3 does equal 3 => true
+print(c != a); // 3 does not equal 10 => true
+print(b >= c); // 3 is equal to 3, so greate than or equals works => true
+print(b <= c); // less than will also work => true
+
+print(bool); // true is true
+print(!bool); // !true is the same as not true = false
+
+// statements can be grouped in ()
+print( !( (a + b) < c ) ); // evaluates to not (13 < 3). 13 is not less than 3. not (false) => true
+
+// the and operator is &&
+print( (b < a) && (c < a) ); // both are true => true
+print( (b < a) && (a < c) ); // a is not less than c => false
+
+// the or operator is ||
+print( (b < a) || (a < c) ); // as long as one is true or is satisfied => true
+print( (!bool) || (a < c) ); // if neither is true => false 

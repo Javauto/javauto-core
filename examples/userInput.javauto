@@ -1,0 +1,9 @@
+// get input from command line and print it
+String userResponse = input("Enter your name: "); // get user input from the console
+String greeting = "Hello " + userResponse + ", it's nice to meet you.";
+print(greeting);
+
+// get input from a dialog box and display response in a message box
+userResponse = inputBox("Enter your name");
+greeting = "Hello " + userResponse + ", it's nice to meet you.";
+msgBox(greeting, "Hello There");

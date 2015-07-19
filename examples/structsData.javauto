@@ -1,0 +1,17 @@
+// define a struct for a user datatype
+struct user {
+	String ID;
+}
+
+// define a function that can return a variable of type user
+func user getUser() {
+	user c = new user(); // create an instance of this type of variable
+	c.ID = USER_NAME.toLowerCase() + "@" + SYSTEM_OS.toLowerCase(); // assign it an ID
+	return c; // return all this data wrapped in our user datatype
+}
+
+// now we call this function and store the data in "us"
+user us = getUser();
+
+// display its ID
+print("USER ID: %s" % (us.ID));
