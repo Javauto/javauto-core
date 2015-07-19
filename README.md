@@ -1,4 +1,6 @@
 #Javauto
+
+[![Join the chat at https://gitter.im/Javauto/javauto-core](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Javauto/javauto-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Javauto is a programming language for automation. Derived from Java, it is a cross platform alternative to something like AutoIt.
 
 Website: http://javauto.org/
