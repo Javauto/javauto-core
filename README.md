@@ -9,6 +9,8 @@ Javauto is a programming language for automation. Derived from Java, it is a cro
 
 * Website: http://javauto.org/
 * Gitter.im chats: [javauto-core](https://gitter.im/Javauto/javauto-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge#) 
+* [Javauto Helper](https://github.com/Javauto/javauto-helper) exists to simplify the process of finding mouse coordinates and pixel colors. 
+* [Java Lookup](https://github.com/Javauto/javauto-lookup) helps a user find relevant documentation for a specific function. 
 * StackOverflow: questions with the [javauto](http://stackoverflow.com/questions/tagged/javauto) tag
 * Syntax highlighting and auto completion for Javauto files in [Notepad++](https://github.com/Javauto/javauto-notepad-plusplus) 
 * If you're looking to report a bug, please use the [issue tracker](https://github.com/Javauto/javauto-core/issues).
