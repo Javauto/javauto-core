@@ -2,13 +2,15 @@ package com.automation.javauto.test;
 
 import static org.assertj.core.api.StrictAssertions.assertThat;
 import static org.assertj.core.api.StrictAssertions.fail;
-import static org.assertj.core.api.Assertions.contentOf;
+import static org.assertj.core.api.Assertions.*;
 
 import java.awt.MouseInfo;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
@@ -675,11 +677,282 @@ public class JavautoTest {
     @Test
     public void testJoin() {
 	Javauto javauto = new Javauto();
-	String[] strArray = { "Jack Copeland", "Sebastian Gudagn" };
+	String[] strArray = { "Jack Copeland", "Sebastian Guadagna" };
 	String delimiter = "|";
 
 	assertThat(javauto.join(delimiter, strArray)).isEqualToIgnoringCase(
-		"Jack Copeland|Sebastian Gudagn");
+		"Jack Copeland|Sebastian Guadagna");
     }
 
+    @Test
+    public void testArrayAsList() {
+	Javauto javauto = new Javauto();
+	String[] strArray = { "Jack Copeland", "Sebastian Gudagn" };
+	List<String> expected = Arrays.asList(strArray);
+	List<String> theList = javauto.arrayAsList(strArray);
+
+	assertThat(theList).isEqualToComparingFieldByField(expected);
+    }
+
+    @Test
+    public void testArrayBinarySearchByte() {
+	Javauto javauto = new Javauto();
+	byte searchVal = 35;
+	byte arr[] = { 10, 12, 34, searchVal, 5 };
+	int index = javauto.arrayBinarySearch(arr, searchVal);
+
+	assertThat(index).isEqualTo(4);
+    }
+
+    @Test
+    public void testArrayBinarySearchChar() {
+	Javauto javauto = new Javauto();
+	char searchVal = 'c';
+	char arr[] = { 'a', 'c', 'b', 'e', 'd' };
+	int index = javauto.arrayBinarySearch(arr, searchVal);
+
+	assertThat(index).isEqualTo(2);
+    }
+
+    @Test
+    public void testArrayBinarySearchDouble() {
+	Javauto javauto = new Javauto();
+	double searchVal = 4.6;
+	double arr[] = { 5.4, 49.2, 9.2, 35.4, 4.6 };
+	int index = javauto.arrayBinarySearch(arr, searchVal);
+
+	assertThat(index).isEqualTo(0);
+    }
+
+    @Test
+    public void testArrayBinarySearchFloat() {
+	Javauto javauto = new Javauto();
+	float searchVal = 42.9f;
+	float arr[] = { 5.2f, 46.1f, 42.9f, 22.3f };
+	int index = javauto.arrayBinarySearch(arr, searchVal);
+
+	assertThat(index).isEqualTo(2);
+    }
+
+    @Test
+    public void testArrayBinarySearchInt() {
+	Javauto javauto = new Javauto();
+	int searchVal = 5;
+	int arr[] = { 30, 20, 5, 12, 55 };
+	int index = javauto.arrayBinarySearch(arr, searchVal);
+
+	assertThat(index).isEqualTo(0);
+    }
+
+    @Test
+    public void testArrayBinarySearchLong() {
+	Javauto javauto = new Javauto();
+	long searchVal = 46464;
+	long arr[] = { 56, 46464, 3342, 232, 3445 };
+	int index = javauto.arrayBinarySearch(arr, searchVal);
+
+	assertThat(index).isEqualTo(4);
+    }
+
+    @Test
+    public void testArrayBinarySearchShort() {
+	Javauto javauto = new Javauto();
+	short searchVal = 52;
+	short arr[] = { 5, 2, 15, 52, 10 };
+	int index = javauto.arrayBinarySearch(arr, searchVal);
+
+	assertThat(index).isEqualTo(4);
+    }
+
+    @Test
+    public void testArrayCopyOfBoolean() {
+	Javauto javauto = new Javauto();
+	boolean[] a1 = new boolean[] { true, false };
+	boolean[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains(true, atIndex(0))
+		.contains(false, atIndex(1)).contains(false, atIndex(2))
+		.contains(false, atIndex(3));
+    }
+
+    @Test
+    public void testArrayCopyOfBooleanShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	boolean[] a1 = new boolean[] { true, false };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is negative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
+
+    @Test
+    public void testArrayCopyOfBytes() {
+	Javauto javauto = new Javauto();
+	byte[] a1 = new byte[] { 5, 62, 15 };
+	byte[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains((byte) 5, atIndex(0))
+		.contains((byte) 62, atIndex(1))
+		.contains((byte) 15, atIndex(2)).contains((byte) 0, atIndex(3));
+    }
+
+    @Test
+    public void testArrayCopyOfBytesShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	byte[] a1 = new byte[] { 5, 62, 15 };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is nagative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
+
+    @Test
+    public void testArrayCopyOfChar() {
+	Javauto javauto = new Javauto();
+	char[] a1 = new char[] { 'p', 's', 'r' };
+	char[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains('p', atIndex(0))
+		.contains('s', atIndex(1)).contains('r', atIndex(2));
+    }
+
+    @Test
+    public void testArrayCopyOfCharShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	char[] a1 = new char[] { 'p', 's', 'r' };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is negative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
+
+    @Test
+    public void testArrayCopyOfDouble() {
+	Javauto javauto = new Javauto();
+	double[] a1 = new double[] { 12.5, 3.2, 37.5 };
+	double[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains(12.5, atIndex(0))
+		.contains(3.2, atIndex(1)).contains(37.5, atIndex(2))
+		.contains(0, atIndex(3));
+    }
+
+    @Test
+    public void testArrayCopyOfDoubleShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	double[] a1 = new double[] { 12.5, 3.2, 37.5 };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is negative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
+
+    @Test
+    public void testArrayCopyOfFloat() {
+	Javauto javauto = new Javauto();
+	float[] a1 = new float[] { 10f, 32f, 25f };
+	float[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains(10f, atIndex(0))
+		.contains(32f, atIndex(1)).contains(25f, atIndex(2))
+		.contains(0f, atIndex(3));
+    }
+
+    @Test
+    public void testArrayCopyOfFloatShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	float[] a1 = new float[] { 10f, 32f, 25f };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is negative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
+
+    @Test
+    public void testArrayCopyOfInt() {
+	Javauto javauto = new Javauto();
+	int[] a1 = new int[] { 45, 32, 75 };
+	int[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains(45, atIndex(0))
+		.contains(32, atIndex(1)).contains(75, atIndex(2))
+		.contains(0, atIndex(3));
+    }
+
+    @Test
+    public void testArrayCopyOfIntShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	int[] a1 = new int[] { 45, 32, 75 };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is negative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
+
+    @Test
+    public void testArrayCopyOfLong() {
+	Javauto javauto = new Javauto();
+	long[] a1 = new long[] { 15, 10, 45 };
+	long[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains(15, atIndex(0))
+		.contains(10, atIndex(1)).contains(45, atIndex(2))
+		.contains(0L, atIndex(3));
+    }
+
+    @Test
+    public void testArrayCopyOfLongShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	long[] a1 = new long[] { 15, 10, 45 };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is negative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
+
+    @Test
+    public void testArrayCopyOfShort() {
+	Javauto javauto = new Javauto();
+	short[] a1 = new short[] { 15, 10, 45 };
+	short[] a2 = javauto.arrayCopyOf(a1, 4);
+
+	assertThat(a2).hasSize(4).contains((short) 15, atIndex(0))
+		.contains((short) 10, atIndex(1))
+		.contains((short) 45, atIndex(2))
+		.contains((short) 0, atIndex(3));
+    }
+
+    @Test
+    public void testArrayCopyOfShortShouldBeReturnRuntimeExceptionWithNegativeLength() {
+	Javauto javauto = new Javauto();
+	short[] a1 = new short[] { 15, 10, 45 };
+
+	try {
+	    javauto.arrayCopyOf(a1, -1);
+	    fail("RuntimeException expected because the new length is negative.");
+	} catch (RuntimeException e) {
+	    assertThat(e);
+	}
+    }
 }

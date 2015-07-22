@@ -31,9 +31,11 @@ import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -3211,5 +3213,361 @@ public class Javauto {
      */
     public void exit() {
 	System.exit(0);
+    }
+
+    /**
+     * Returns a fixed-size list backed by the specified Array.
+     * 
+     * @param array
+     *            - This is the Array of strings by which the list will be
+     *            backed.
+     * @return This method returns a list view of the specified Array.
+     */
+    public List<String> arrayAsList(final String[] array) {
+	return Arrays.asList(array);
+    }
+
+    /**
+     * This method searches the specified Array of bytes for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(byte[] a, byte key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of chars for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(char[] a, char key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of doubles for the specified
+     * value using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(double[] a, double key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of floats for the specified
+     * value using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(float[] a, float key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of ints for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(int[] a, int key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of longs for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(long[] a, long key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of shorts for the specified
+     * value using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(short[] a, short key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method copies the specified Array, truncating or padding with false
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original Array and the copy, the two Arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain false. Such indices will exist if
+     * and only if the specified length is greater than that of the original
+     * Array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with false
+     *         elements to obtain the specified length.
+     */
+    public boolean[] arrayCopyOf(boolean[] original, int newLength) {
+	boolean[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain (byte) 0.Such indices will exist
+     * if and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with false
+     *         elements to obtain the specified length.
+     */
+    public byte[] arrayCopyOf(byte[] original, int newLength) {
+	byte[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with null
+     * characters (if necessary) so the copy has the specified length. For all
+     * indices that are valid in both the original array and the copy, the two
+     * arrays will contain identical values. For any indices that are valid in
+     * the copy but not the original, the copy will contain '\\u000'.Such
+     * indices will exist if and only if the specified length is greater than
+     * that of the original array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with null
+     *         characters to obtain the specified length.
+     */
+    public char[] arrayCopyOf(char[] original, int newLength) {
+	char[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0d. Such indices will exist if
+     * and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original Array, truncated or padded with zeros to
+     *         obtain the specified length.
+     */
+    public double[] arrayCopyOf(double[] original, int newLength) {
+	double[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0f.Such indices will exist if and
+     * only if the specified length is greater than that of the original array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return
+     */
+    public float[] arrayCopyOf(float[] original, int newLength) {
+	float[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0.Such indices will exist if and
+     * only if the specified length is greater than that of the original array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return
+     */
+    public int[] arrayCopyOf(int[] original, int newLength) {
+	int[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0L. Such indices will exist if
+     * and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return
+     */
+    public long[] arrayCopyOf(long[] original, int newLength) {
+	long[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain (short)0. Such indices will exist
+     * if and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with zeros to
+     *         obtain the specified length.
+     */
+    public short[] arrayCopyOf(short[] original, int newLength) {
+	short[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
     }
 }
