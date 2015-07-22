@@ -955,4 +955,77 @@ public class JavautoTest {
 	    assertThat(e);
 	}
     }
+
+    @Test
+    public void testArraySortByte() {
+	Javauto javauto = new Javauto();
+	byte[] a1 = { 10, 2, 7, 35 };
+	byte[] a2 = javauto.arraySort(a1);
+
+	assertThat(a2).hasSize(4).contains((byte) 2, atIndex(0))
+		.contains((byte) 7, atIndex(1)).contains((byte) 10, atIndex(2))
+		.contains((byte) 35, atIndex(3));
+    }
+
+    @Test
+    public void testArraySortChar() {
+	Javauto javauto = new Javauto();
+	char[] a1 = { 'r', 'q', 's', 'p' };
+	char[] a2 = javauto.arraySort(a1);
+
+	assertThat(a2).hasSize(4).contains('p', atIndex(0))
+		.contains('q', atIndex(1)).contains('r', atIndex(2))
+		.contains('s', atIndex(3));
+    }
+
+    @Test
+    public void testArraySortDouble() {
+	Javauto javauto = new Javauto();
+	double[] a1 = { 3.2, 1.2, 9.7 };
+	double[] a2 = javauto.arraySort(a1);
+
+	assertThat(a2).hasSize(3).contains(1.2, atIndex(0))
+		.contains(3.2, atIndex(1)).contains(9.7, atIndex(2));
+    }
+
+    @Test
+    public void testArraySortFloat() {
+	Javauto javauto = new Javauto();
+	float[] a1 = { 3.2f, 1.2f, 9.7f };
+	float[] a2 = javauto.arraySort(a1);
+
+	assertThat(a2).hasSize(3).contains(1.2f, atIndex(0))
+		.contains(3.2f, atIndex(1)).contains(9.7f, atIndex(2));
+    }
+
+    @Test
+    public void testArraySortInt() {
+	Javauto javauto = new Javauto();
+	int[] a1 = { 2, 1, 9 };
+	int[] a2 = javauto.arraySort(a1);
+
+	assertThat(a2).hasSize(3).contains(1, atIndex(0))
+		.contains(2, atIndex(1)).contains(9, atIndex(2));
+    }
+
+    @Test
+    public void testArraySortLong() {
+	Javauto javauto = new Javauto();
+	long[] a1 = { 22, 10, 91 };
+	long[] a2 = javauto.arraySort(a1);
+
+	assertThat(a2).hasSize(3).contains(10, atIndex(0))
+		.contains(22, atIndex(1)).contains(91, atIndex(2));
+    }
+
+    @Test
+    public void testArraySortShort() {
+	Javauto javauto = new Javauto();
+	short[] a1 = { 22, 10, 91 };
+	short[] a2 = javauto.arraySort(a1);
+
+	assertThat(a2).hasSize(3).contains((short) 10, atIndex(0))
+		.contains((short) 22, atIndex(1))
+		.contains((short) 91, atIndex(2));
+    }
 }

@@ -3568,4 +3568,96 @@ public class Javauto {
 		    + e.getMessage());
 	}
     }
+
+    /**
+     * This method sorts the specified array of bytes into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public byte[] arraySort(byte[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of chars into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public char[] arraySort(char[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of doubles into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public double[] arraySort(double[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of floats into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public float[] arraySort(float[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of ints into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public int[] arraySort(int[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of longs into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public long[] arraySort(long[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of shorts into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public short[] arraySort(short[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
 }
