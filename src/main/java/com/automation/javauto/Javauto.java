@@ -3935,4 +3935,123 @@ public class Javauto {
     public boolean arrayEquals(String[] a, String[] a2) {
 	return Arrays.equals(a, a2);
     }
+
+    /**
+     * Retrieves an environment variable.
+     *
+     * @param var
+     *            - Name of the environment variable to get such as "JAVA_HOME"
+     *            or "PATH".
+     * @return The value of the environment variable specified by variable, or
+     *         an empty String if the environment variable is not found.
+     */
+    public String getEnv(String var) {
+	String value = "";
+	if (!var.isEmpty()) {
+	    value = System.getenv(var);
+	}
+	return value;
+    }
+
+    /**
+     * Retrieve all environment variables along with their values.
+     *
+     * @return All environment variables along with their values. For example:
+     *         "Var1=Value, Var2=Value"
+     */
+    public String getEnv() {
+	Map<String, String> env = System.getenv();
+	return Arrays.toString(env.entrySet().toArray());
+    }
+
+    /**
+     * Sends the contents of an array of strings to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(String[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of bytes to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(byte[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of booleans to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(boolean[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of chars to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(char[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of doubles to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(double[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of floats to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(float[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of ints to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(int[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of longs to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(long[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of shorts to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(short[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
 }

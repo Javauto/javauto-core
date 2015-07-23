@@ -306,6 +306,80 @@ func void testSetAndGetSpeed(){
 	setSpeed(spd);
 	assertThatStringEquals(toString(spd), toString(getSpeed()), method, "");
 }	
+
+func void testGetEnvWithParameter(){
+    String method = "envGet (String)";
+    String value = getEnv("PATH");
+    assertThatIsFalse(value.isEmpty(), method, "");
+}   
+
+func void testGetEnvWithEmptyParameter(){
+    String method = "envGet";
+    String value = getEnv("");
+    assertThatIsTrue(value.isEmpty(), method, "");
+}   
+
+func void testGetEnvWithoutParameter(){
+    String method = "envGet";
+    String value = getEnv();
+    assertThatIsFalse(value.isEmpty(), method, "");
+}
+
+func void testArrayToClipString() {
+    String method = "arrayToClip (String)";
+    String[] a1 = { "Pierre", "Fermat" };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[Pierre, Fermat]", method, "");
+}
+
+func void testArrayToClipByte() {
+    String method = "arrayToClip (Byte)";
+    byte[] a1 = new byte[] { 5, 62 };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5, 62]", method, "");
+}
+
+func void testArrayToClipBoolean() {
+    String method = "arrayToClip (Boolean)";
+    boolean[] a1 = new boolean[] { true, false };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[true, false]", method, "");
+}
+
+func void testArrayToClipChart() {
+    String method = "arrayToClip (Chart)";
+    char[] a1 = new char[] { 'p', 's' };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[p, s]", method, "");
+}
+
+func void testArrayToClipFloat() {
+    String method = "arrayToClip (Float)";
+    float[] a1 = { 5.2f, 46.1f };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5.2, 46.1]", method, "");
+}
+
+func void testArrayToClipInt() {
+    String method = "arrayToClip (Int)";
+    int[] a1 = { 5, 4 };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5, 4]", method, "");
+}
+
+func void testArrayToClipLong() {
+    String method = "arrayToClip (Long)";
+    long[] a1 = { 56, 46464 };
+    arrayToClip(a1);   
+    assertThatStringEquals(clipboardGet(), "[56, 46464]", method, "");
+}
+
+func void testArrayToClipShort() {
+    String method = "arrayToClip (Short)";
+    short[] a1 = { 5, 2 };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5, 2]", method, "");
+}
 //#END TESTS
 
 
@@ -340,6 +414,17 @@ func void suite(){
 	testArrayEqualsString();
 	testClipboardPutAndGet();
 	testSetAndGetSpeed();
+	testGetEnvWithParameter();
+	testGetEnvWithEmptyParameter();
+	testGetEnvWithoutParameter();
+	testArrayToClipString();
+	testArrayToClipByte();
+	testArrayToClipBoolean();
+	testArrayToClipChart();
+	testArrayToClipFloat();
+	testArrayToClipInt();
+	testArrayToClipLong();
+	testArrayToClipShort();
 }
 
 suite();

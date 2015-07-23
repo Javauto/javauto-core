@@ -1204,4 +1204,96 @@ public class JavautoTest {
 	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
 	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
     }
+
+    @Test
+    public void testGetEnvWithParameter() {
+	Javauto javauto = new Javauto();
+	assertThat(javauto.getEnv("PATH")).isNotEmpty();
+    }
+
+    @Test
+    public void testGetEnvWithEmptyParameterShouldBeReturnAnEmptyString() {
+	Javauto javauto = new Javauto();
+	assertThat(javauto.getEnv("")).isEmpty();
+    }
+
+    @Test
+    public void testGetEnvWithoutParameter() {
+	Javauto javauto = new Javauto();
+	assertThat(javauto.getEnv()).isNotEmpty();
+    }
+
+    @Test
+    public void testArrayToClipString() {
+	Javauto javauto = new Javauto();
+	String[] a1 = { "Pierre", "Fermat" };
+	javauto.arrayToClip(a1);
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase(
+		"[Pierre, Fermat]");
+    }
+
+    @Test
+    public void testArrayToClipByte() {
+	Javauto javauto = new Javauto();
+	byte[] a1 = new byte[] { 5, 62 };
+	javauto.arrayToClip(a1);
+
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase("[5, 62]");
+    }
+
+    @Test
+    public void testArrayToClipBoolean() {
+	Javauto javauto = new Javauto();
+	boolean[] a1 = new boolean[] { true, false };
+	javauto.arrayToClip(a1);
+
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase(
+		"[true, false]");
+    }
+
+    @Test
+    public void testArrayToClipChart() {
+	Javauto javauto = new Javauto();
+	char[] a1 = new char[] { 'p', 's' };
+	javauto.arrayToClip(a1);
+
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase("[p, s]");
+    }
+
+    @Test
+    public void testArrayToClipFloat() {
+	Javauto javauto = new Javauto();
+	float[] a1 = { 5.2f, 46.1f };
+	javauto.arrayToClip(a1);
+
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase("[5.2, 46.1]");
+    }
+
+    @Test
+    public void testArrayToClipInt() {
+	Javauto javauto = new Javauto();
+	int[] a1 = { 5, 4 };
+	javauto.arrayToClip(a1);
+
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase("[5, 4]");
+    }
+
+    @Test
+    public void testArrayToClipLong() {
+	Javauto javauto = new Javauto();
+	long[] a1 = { 56, 46464 };
+	javauto.arrayToClip(a1);
+
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase("[56, 46464]");
+    }
+
+    @Test
+    public void testArrayToClipShort() {
+	Javauto javauto = new Javauto();
+	short[] a1 = { 5, 2 };
+	javauto.arrayToClip(a1);
+
+	assertThat(javauto.clipboardGet()).isEqualToIgnoringCase("[5, 2]");
+    }
+
 }
