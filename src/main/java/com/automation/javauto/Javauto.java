@@ -3662,4 +3662,277 @@ public class Javauto {
 	return a;
     }
 
+    /**
+     * This method returns a string representation of the contents of the
+     * specified boolean array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(boolean[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified byte array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(byte[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified char array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(char[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified double array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(double[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified float array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(float[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified int array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(int[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified long array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(long[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified short array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(short[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified String array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(String[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of booleans are
+     * equal to one another.Two arrays are equal if they contain the same
+     * elements in the same order.Two array references are considered equal if
+     * both are null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(boolean[] a, boolean[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of bytes are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order. Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(byte[] a, byte[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of chars are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(char[] a, char[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of doubles are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(double[] a, double[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of floats are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(float[] a, float[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of ints are equal to
+     * one another.Two arrays are equal if they contain the same elements in the
+     * same order.Two array references are considered equal if both are null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(int[] a, int[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of longs are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(long[] a, long[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of shorts are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(short[] a, short[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of strings are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(String[] a, String[] a2) {
+	return Arrays.equals(a, a2);
+    }
 }

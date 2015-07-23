@@ -1028,4 +1028,180 @@ public class JavautoTest {
 		.contains((short) 22, atIndex(1))
 		.contains((short) 91, atIndex(2));
     }
+
+    @Test
+    public void testArrayToStringBoolean() {
+	Javauto javauto = new Javauto();
+	boolean[] a1 = new boolean[] { true, false };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase(
+		"[true, false]");
+    }
+
+    @Test
+    public void testArrayToStringByte() {
+	Javauto javauto = new Javauto();
+	byte[] a1 = new byte[] { 5, 62 };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase("[5, 62]");
+    }
+
+    @Test
+    public void testArrayToStringChar() {
+	Javauto javauto = new Javauto();
+	char[] a1 = new char[] { 'p', 's' };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase("[p, s]");
+    }
+
+    @Test
+    public void testArrayToStringDouble() {
+	Javauto javauto = new Javauto();
+	double a1[] = { 5.4, 49.2 };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase(
+		"[5.4, 49.2]");
+    }
+
+    @Test
+    public void testArrayToStringFloat() {
+	Javauto javauto = new Javauto();
+	float a1[] = { 5.2f, 46.1f };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase(
+		"[5.2, 46.1]");
+    }
+
+    @Test
+    public void testArrayToStringInt() {
+	Javauto javauto = new Javauto();
+	int a1[] = { 5, 4 };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase("[5, 4]");
+    }
+
+    @Test
+    public void testArrayToStringLong() {
+	Javauto javauto = new Javauto();
+	long a1[] = { 56, 46464 };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase(
+		"[56, 46464]");
+    }
+
+    @Test
+    public void testArrayToStringShort() {
+	Javauto javauto = new Javauto();
+	short a1[] = { 5, 2 };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase("[5, 2]");
+    }
+
+    @Test
+    public void testArrayToStringString() {
+	Javauto javauto = new Javauto();
+	String[] a1 = { "Julio", "Rey", "Pastor" };
+
+	assertThat(javauto.arrayToString(a1)).isEqualToIgnoringCase(
+		"[Julio, Rey, Pastor]");
+    }
+
+    @Test
+    public void testArrayEqualsBoolean() {
+	Javauto javauto = new Javauto();
+	boolean[] a1 = new boolean[] { true, false };
+	boolean[] a2 = new boolean[] { true, false };
+	boolean[] a3 = new boolean[] { true, true };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsByte() {
+	Javauto javauto = new Javauto();
+	byte[] a1 = new byte[] { 5, 62 };
+	byte[] a2 = new byte[] { 5, 62 };
+	byte[] a3 = new byte[] { 5 };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsChar() {
+	Javauto javauto = new Javauto();
+	char[] a1 = new char[] { 'p', 's' };
+	char[] a2 = new char[] { 'p', 's' };
+	char[] a3 = new char[] { 'p', 'p' };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsDouble() {
+	Javauto javauto = new Javauto();
+	double[] a1 = { 5.4, 49.2 };
+	double[] a2 = { 5.4, 49.2 };
+	double[] a3 = { 5.4, 2.1 };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsFloat() {
+	Javauto javauto = new Javauto();
+	float[] a1 = { 5.2f, 46.1f };
+	float[] a2 = { 5.2f, 46.1f };
+	float[] a3 = { 5.2f, 6.1f };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsInt() {
+	Javauto javauto = new Javauto();
+	int[] a1 = { 1, 2 };
+	int[] a2 = { 1, 2 };
+	int[] a3 = { 0, 2 };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsLong() {
+	Javauto javauto = new Javauto();
+	long[] a1 = { 56, 46464 };
+	long[] a2 = { 56, 46464 };
+	long[] a3 = { 56, 46 };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsShort() {
+	Javauto javauto = new Javauto();
+	short[] a1 = { 5, 2 };
+	short[] a2 = { 5, 2 };
+	short[] a3 = { 5, 5 };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
+
+    @Test
+    public void testArrayEqualsString() {
+	Javauto javauto = new Javauto();
+	String[] a1 = { "Pierre", "Fermat" };
+	String[] a2 = { "Pierre", "Fermat" };
+	String[] a3 = { "Evariste", "Galois" };
+
+	assertThat(javauto.arrayEquals(a1, a2)).isTrue();
+	assertThat(javauto.arrayEquals(a1, a3)).isFalse();
+    }
 }
