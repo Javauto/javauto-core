@@ -10,7 +10,10 @@ before_install:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 
-script: "mvn clean install"
+script: 
+  - "mvn clean install"
+  - "java -jar /home/travis/build/Javauto/javauto-core/target/javauto-1.1.0.jar /home/travis/build/Javauto/javauto-core/src/test/resources/script/tests.javauto"
+  - "java -jar tests.jar"
 
 sudo: false
 
