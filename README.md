@@ -1,5 +1,4 @@
-#Javauto
-
+![alt tag](https://cloud.githubusercontent.com/assets/3797402/12889666/c396826e-ce5e-11e5-8637-7b942d31dcfe.png)
 
 Javauto is a programming language for automation. Derived from Java, it is a cross platform alternative to something like AutoIt.
 
@@ -7,7 +6,7 @@ Javauto is a programming language for automation. Derived from Java, it is a cro
 
 #Links
 
-* Website: http://javauto.org/
+* Website: http://javauto-lang.org/
 * Gitter.im chats: [javauto-core](https://gitter.im/Javauto/javauto-core?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge#) 
 * [Javauto Helper](https://github.com/Javauto/javauto-helper) exists to simplify the process of finding mouse coordinates and pixel colors. 
 * [Java Lookup](https://github.com/Javauto/javauto-lookup) helps a user find relevant documentation for a specific function. 
