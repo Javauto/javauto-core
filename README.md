@@ -1,4 +1,4 @@
-![alt tag](https://cloud.githubusercontent.com/assets/3797402/12889666/c396826e-ce5e-11e5-8637-7b942d31dcfe.png)
+![alt tag](https://cloud.githubusercontent.com/assets/3797402/12898899/c04d2f5c-ce8d-11e5-96ad-0d35c37a9f9a.png)
 
 Javauto is a programming language for automation. Derived from Java, it is a cross platform alternative to something like AutoIt.
 
