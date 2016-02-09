@@ -31,9 +31,11 @@ import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
@@ -3212,4 +3214,844 @@ public class Javauto {
     public void exit() {
 	System.exit(0);
     }
+
+    /**
+     * Returns a fixed-size list backed by the specified Array.
+     * 
+     * @param array
+     *            - This is the Array of strings by which the list will be
+     *            backed.
+     * @return This method returns a list view of the specified Array.
+     */
+    public List<String> arrayAsList(final String[] array) {
+	return Arrays.asList(array);
+    }
+
+    /**
+     * This method searches the specified Array of bytes for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(byte[] a, byte key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of chars for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(char[] a, char key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of doubles for the specified
+     * value using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(double[] a, double key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of floats for the specified
+     * value using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(float[] a, float key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of ints for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(int[] a, int key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of longs for the specified value
+     * using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(long[] a, long key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method searches the specified Array of shorts for the specified
+     * value using the binary search algorithm.
+     * 
+     * @param a
+     *            - This is the Array to be searched.
+     * @param key
+     *            - This is the value to be searched for.
+     * @return The index of the search key, if it is contained in the Array,
+     *         else it returns (-(insertion point) - 1). The insertion point is
+     *         the point at which the key would be inserted into the Array: the
+     *         index of the first element greater than the key, or a.length if
+     *         all elements in the Array are less than the specified key.
+     */
+    public int arrayBinarySearch(short[] a, short key) {
+	Arrays.sort(a);
+	return Arrays.binarySearch(a, key);
+    }
+
+    /**
+     * This method copies the specified Array, truncating or padding with false
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original Array and the copy, the two Arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain false. Such indices will exist if
+     * and only if the specified length is greater than that of the original
+     * Array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with false
+     *         elements to obtain the specified length.
+     */
+    public boolean[] arrayCopyOf(boolean[] original, int newLength) {
+	boolean[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain (byte) 0.Such indices will exist
+     * if and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with false
+     *         elements to obtain the specified length.
+     */
+    public byte[] arrayCopyOf(byte[] original, int newLength) {
+	byte[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with null
+     * characters (if necessary) so the copy has the specified length. For all
+     * indices that are valid in both the original array and the copy, the two
+     * arrays will contain identical values. For any indices that are valid in
+     * the copy but not the original, the copy will contain '\\u000'.Such
+     * indices will exist if and only if the specified length is greater than
+     * that of the original array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with null
+     *         characters to obtain the specified length.
+     */
+    public char[] arrayCopyOf(char[] original, int newLength) {
+	char[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0d. Such indices will exist if
+     * and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original Array, truncated or padded with zeros to
+     *         obtain the specified length.
+     */
+    public double[] arrayCopyOf(double[] original, int newLength) {
+	double[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0f.Such indices will exist if and
+     * only if the specified length is greater than that of the original array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return
+     */
+    public float[] arrayCopyOf(float[] original, int newLength) {
+	float[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0.Such indices will exist if and
+     * only if the specified length is greater than that of the original array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return
+     */
+    public int[] arrayCopyOf(int[] original, int newLength) {
+	int[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain 0L. Such indices will exist if
+     * and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return
+     */
+    public long[] arrayCopyOf(long[] original, int newLength) {
+	long[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method copies the specified array, truncating or padding with zeros
+     * (if necessary) so the copy has the specified length. For all indices that
+     * are valid in both the original array and the copy, the two arrays will
+     * contain identical values. For any indices that are valid in the copy but
+     * not the original, the copy will contain (short)0. Such indices will exist
+     * if and only if the specified length is greater than that of the original
+     * array.
+     * 
+     * @param original
+     *            - The Array to be copied.
+     * @param newLength
+     *            - The length of the copy to be returned.
+     * @return A copy of the original array, truncated or padded with zeros to
+     *         obtain the specified length.
+     */
+    public short[] arrayCopyOf(short[] original, int newLength) {
+	short[] arr;
+	try {
+	    arr = Arrays.copyOf(original, newLength);
+	    return arr;
+	} catch (NegativeArraySizeException e) {
+	    throw new RuntimeException("The new length cannot be negative."
+		    + e.getMessage());
+	}
+    }
+
+    /**
+     * This method sorts the specified array of bytes into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public byte[] arraySort(byte[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of chars into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public char[] arraySort(char[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of doubles into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public double[] arraySort(double[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of floats into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public float[] arraySort(float[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of ints into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public int[] arraySort(int[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of longs into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public long[] arraySort(long[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method sorts the specified array of shorts into ascending numerical
+     * order.
+     * 
+     * @param a
+     *            - The array to be sorted.
+     * @return The sorted array.
+     */
+    public short[] arraySort(short[] a) {
+	Arrays.sort(a);
+	return a;
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified boolean array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(boolean[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified byte array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(byte[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified char array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(char[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified double array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(double[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified float array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(float[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified int array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(int[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified long array. The string representation consists of a list of the
+     * array's elements, enclosed in square brackets ("[]"). Adjacent elements
+     * are separated by the characters ", " (a comma followed by a space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(long[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified short array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(short[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns a string representation of the contents of the
+     * specified String array. The string representation consists of a list of
+     * the array's elements, enclosed in square brackets ("[]"). Adjacent
+     * elements are separated by the characters ", " (a comma followed by a
+     * space).
+     *
+     * @param a
+     *            - The array whose string representation to return.
+     * @return A string representation of a.
+     */
+    public String arrayToString(String[] a) {
+	return Arrays.toString(a);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of booleans are
+     * equal to one another.Two arrays are equal if they contain the same
+     * elements in the same order.Two array references are considered equal if
+     * both are null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(boolean[] a, boolean[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of bytes are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order. Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(byte[] a, byte[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of chars are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(char[] a, char[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of doubles are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(double[] a, double[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of floats are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(float[] a, float[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of ints are equal to
+     * one another.Two arrays are equal if they contain the same elements in the
+     * same order.Two array references are considered equal if both are null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(int[] a, int[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of longs are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(long[] a, long[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of shorts are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(short[] a, short[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * This method returns true if the two specified arrays of strings are equal
+     * to one another.Two arrays are equal if they contain the same elements in
+     * the same order.Two array references are considered equal if both are
+     * null.
+     *
+     * @param a
+     *            - The array to be tested for equality.
+     * @param a2
+     *            - The other array to be tested for equality.
+     * @return true if the two arrays are equal, otherwise returns false
+     */
+    public boolean arrayEquals(String[] a, String[] a2) {
+	return Arrays.equals(a, a2);
+    }
+
+    /**
+     * Retrieves an environment variable.
+     *
+     * @param var
+     *            - Name of the environment variable to get such as "JAVA_HOME"
+     *            or "PATH".
+     * @return The value of the environment variable specified by variable, or
+     *         an empty String if the environment variable is not found.
+     */
+    public String getEnv(String var) {
+	String value = "";
+	if (!var.isEmpty()) {
+	    value = System.getenv(var);
+	}
+	return value;
+    }
+
+    /**
+     * Retrieve all environment variables along with their values.
+     *
+     * @return All environment variables along with their values. For example:
+     *         "Var1=Value, Var2=Value"
+     */
+    public String getEnv() {
+	Map<String, String> env = System.getenv();
+	return Arrays.toString(env.entrySet().toArray());
+    }
+
+    /**
+     * Sends the contents of an array of strings to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(String[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of bytes to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(byte[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of booleans to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(boolean[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of chars to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(char[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of doubles to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(double[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of floats to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(float[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of ints to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(int[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of longs to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(long[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
+    /**
+     * Sends the contents of an array of shorts to the clipboard.
+     *
+     * @param a
+     *            - Array to copy to clipboard.
+     */
+    public void arrayToClip(short[] a) {
+	clipboardPut(arrayToString(a));
+    }
+
 }

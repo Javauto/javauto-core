@@ -1,0 +1,438 @@
+global boolean ok;
+global int errCount;
+ok = true;
+errCount = 0;
+
+//#START PSEUDO-ASSERTS
+
+//Print an error and exit.
+//@param method - The method name in which the error occurred.
+//@para desscription - The error description.
+func void setError(String method, String description){
+	print("Error on [%s]. Description [%s]." % (method, description));
+	ok = false;
+	errCount = errCount + 1;
+}
+
+//Assert that the given condition is true
+//@param condition
+//@param method - Method name.
+//@param message - Custom error message.
+func void assertThatIsTrue(boolean condition, String method, String message){	
+	String msg = "Expected [true] but was [%s]" %(toString(condition));
+
+	if(!condition){
+		if(!message.isEmpty()){
+			msg = message;
+		}
+		setError(method, msg);
+	}
+}
+
+//Assert that the given condition is false
+//@param condition
+//@param method - Method name.
+//@param message - Custom error message.
+func void assertThatIsFalse(boolean condition, String method, String message){	
+	String msg = "Expected [false] but was [%s]" %(toString(condition));
+
+	if(condition){
+		if(!message.isEmpty()){
+			msg = message;
+		}
+		setError(method, msg);
+	}
+}
+
+//Assert that two int values numerically are equals.
+//@param a - The first int.
+//@para b - The second int.
+//@param method - Method name.
+//@param message - Custom error message.
+func void assertThatIntEquals(int a, int b, String method, String message){	
+	String msg = "Expected [%s] but was [%s]" %(toString(b), toString(a));
+
+	if(Integer.compare(a, b) != 0){
+		if(!message.isEmpty()){
+			msg = message;
+		}
+		setError(method, msg);
+	}
+}
+
+//Assert that two strings lexicographically (ignoring case differences) are equals.s.
+//@param a - The first String.
+//@para b - The second String.
+//@param method - Method name.
+//@param message - Custom error message.
+func void assertThatStringEquals(String a, String b, String method, String message){	
+	String msg = "Expected [%s] but was [%s]" %(b, a);
+
+	if(!a.equals(b)){
+		if(!message.isEmpty()){
+			msg = message;
+		}
+		setError(method, msg);
+	}
+}
+
+
+//#END PSEUDO-ASSERTS
+
+//#START TESTS
+func void testArrayAsListFunc(){
+	String method = "arrayAsList";
+	String[] a1 = {"a","b","c"};	
+	List<String> theList = arrayAsList(a1);
+	assertThatIsTrue((theList.size() == 3), method,"");	
+};
+
+func void testArrayBinarySearchByte() {
+	String method = "arrayBinarySearch (Byte)";
+	byte searchVal = 35;
+	byte[] arr = { 10, 12, 34, searchVal, 5 };
+	assertThatIntEquals(arrayBinarySearch(arr, searchVal), 4, method, "");
+}
+
+func void testArrayBinarySearchChart() {
+	String method = "arrayBinarySearch (Chart)";
+	char searchVal = 'c';
+	char[] arr =  {'a', 'c', 'b', 'e','d'};	
+	assertThatIntEquals(arrayBinarySearch(arr, searchVal), 2, method, "");
+}
+
+func void testArrayBinarySearchDouble() {
+	String method = "arrayBinarySearch (Double)";
+	double searchVal = 4.6;
+	double[] arr = {5.4,49.2,9.2,35.4,4.6};		
+	assertThatIntEquals(arrayBinarySearch(arr, searchVal), 0, method, "");
+}
+
+func void testArrayBinarySearchFloat() {
+	String method = "arrayBinarySearch (Float)";
+	float searchVal = 42.9f;
+	float[] arr = {5.2f,46.1f,42.9f,22.3f};	
+	assertThatIntEquals(arrayBinarySearch(arr, searchVal), 2, method, "");
+}
+
+func void testArrayBinarySearchInt() {
+	String method = "arrayBinarySearch (Int)";
+	int searchVal = 5;
+	int[] arr = {30,20,5,12,55};
+	assertThatIntEquals(arrayBinarySearch(arr, searchVal), 0, method, "");
+}
+
+func void testArrayBinarySearchLong() {
+	String method = "arrayBinarySearch (Long)";
+	long searchVal = 46464;
+	long[] arr = {56,46464,3342,232,3445};
+	assertThatIntEquals(arrayBinarySearch(arr, searchVal), 4, method, "");
+}
+
+func void testArrayBinarySearchShort() {
+	String method = "arrayBinarySearch (Short)";
+	short searchVal = 52;
+	short[] arr = {5,2,15,52,10};
+	assertThatIntEquals(arrayBinarySearch(arr, searchVal), 4, method, "");
+}
+
+func void testArrayCopyOfBoolean() {
+	String method = "arrayCopyOf (Boolean)";
+	boolean[] a1 = new boolean[] {true, false};
+	boolean[] a2 = arrayCopyOf(a1, 4);
+	assertThatIntEquals(a2.length, 4, method, "");
+}
+
+func void testArrayCopyOfBytes() {
+	String method = "arrayCopyOf (Bytes)";
+	byte[] a1 = new byte[] { 5, 62, 15 };
+	byte[] a2 = arrayCopyOf(a1, 4);
+	assertThatIntEquals(a2.length, 4, method, "");
+}
+
+func void testArrayCopyOfChar() {
+	String method = "arrayCopyOf (Char)";
+	char[] a1 = new char[] { 'p', 's', 'r' };
+	char[] a2 = arrayCopyOf(a1, 4);
+	assertThatIntEquals(a2.length, 4, method, "");
+}
+
+func void testArrayToStringBoolean() {
+	String method = "arrayToString (Boolean)";
+	boolean[] a1 = new boolean[] { true, false };
+	assertThatStringEquals(arrayToString(a1),"[true, false]", method, "");
+}
+
+func void testArrayToStringByte() {
+	String method = "arrayToString (Byte)";
+	byte[] a1 = new byte[] { 5, 62 };
+	assertThatStringEquals(arrayToString(a1),"[5, 62]", method, "");
+}
+
+func void testArrayToStringChar() {
+	String method = "arrayToString (Char)";
+	char[] a1 = new char[] { 'p', 's' };
+	assertThatStringEquals(arrayToString(a1),"[p, s]", method, "");
+}
+
+func void testArrayToStringDouble() {
+	String method = "arrayToString (Double)";
+	double a1[] = { 5.4, 49.2 };
+	assertThatStringEquals(arrayToString(a1),"[5.4, 49.2]", method, "");
+}
+
+func void testArrayToStringFloat() {
+	String method = "arrayToString (Double)";
+	float a1[] = { 5.2f, 46.1f };
+	assertThatStringEquals(arrayToString(a1),"[5.2, 46.1]", method, "");
+}
+
+func void testArrayToStringInt() {
+	String method = "arrayToString (Int)";
+	int a1[] = { 5, 4 };
+	assertThatStringEquals(arrayToString(a1),"[5, 4]", method, "");
+}
+
+func void testArrayToStringLong() {
+	String method = "arrayToString (Long)";
+	long a1[] = { 56, 46464 };
+	assertThatStringEquals(arrayToString(a1),"[56, 46464]", method, "");
+}
+
+func void testArrayToStringShort() {
+	String method = "arrayToString (Short)";
+	short a1[] = { 5, 2 };
+	assertThatStringEquals(arrayToString(a1),"[5, 2]", method, "");
+}
+	
+func void testArrayToStringString() {
+	String method = "arrayToString (String)";
+	String[] a1 = { "Julio", "Rey", "Pastor" };
+	String result = arrayToString(a1);
+	assertThatStringEquals(arrayToString(a1),"[Julio, Rey, Pastor]", method, "");
+}
+
+func void testArrayEqualsBoolean() {
+	String method = "arrayEquals (Boolean)";
+	boolean[] a1 = new boolean[] { true, false };
+	boolean[] a2 = new boolean[] { true, false };
+	boolean[] a3 = new boolean[] { true, true };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+
+func void testArrayEqualsByte() {
+	String method = "arrayEquals (Byte)";
+	byte[] a1 = new byte[] { 5, 62 };
+	byte[] a2 = new byte[] { 5, 62 };
+	byte[] a3 = new byte[] { 5 };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+
+func void testArrayEqualsChar() {
+	String method = "arrayEquals (Char)";
+	char[] a1 = new char[] { 'p', 's' };
+	char[] a2 = new char[] { 'p', 's' };
+	char[] a3 = new char[] { 'p', 'p' };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+
+func void testArrayEqualsDouble() {
+	String method = "arrayEquals (Double)";
+	double[] a1 = { 5.4, 49.2 };
+	double[] a2 = { 5.4, 49.2 };
+	double[] a3 = { 5.4, 2.1 };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+
+func void testArrayEqualsFloat() {
+	String method = "arrayEquals (Float)";
+	float[] a1 = { 5.2f, 46.1f };
+	float[] a2 = { 5.2f, 46.1f };
+	float[] a3 = { 5.2f, 6.1f };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+
+func void testArrayEqualsInt() {
+	String method = "arrayEquals (Int)";
+	int[] a1 = { 1, 2 };
+	int[] a2 = { 1, 2 };
+	int[] a3 = { 0, 2 };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+
+func void testArrayEqualsLong() {
+	String method = "arrayEquals (Long)";
+	long[] a1 = { 56, 46464 };
+	long[] a2 = { 56, 46464 };
+	long[] a3 = { 56, 46 };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+	
+func void testArrayEqualsShort() {
+	String method = "arrayEquals (Short)";
+	short[] a1 = { 5, 2 };
+	short[] a2 = { 5, 2 };
+	short[] a3 = { 5, 5 };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+	
+func void testArrayEqualsString() {
+	String method = "arrayEquals (String)";
+	String[] a1 = { "Pierre", "Fermat" };
+	String[] a2 = { "Pierre", "Fermat" };
+	String[] a3 = { "Evariste", "Galois" };
+	assertThatIsTrue((arrayEquals(a1, a2)), method, "");
+	assertThatIsFalse((arrayEquals(a1, a3)), method, "");
+}
+
+func void testClipboardPutAndGet(){
+	String method = "clipboardPut & clipboardGet";
+	String clip = "put me in the clipboard!";
+	clipboardPut(clip);	
+	assertThatStringEquals(clip,clipboardGet(), method, "");
+}
+	
+func void testSetAndGetSpeed(){
+	String method = "setSpeed & getSpeed";
+	double spd = 0.5;
+	setSpeed(spd);
+	assertThatStringEquals(toString(spd), toString(getSpeed()), method, "");
+}	
+
+func void testGetEnvWithParameter(){
+    String method = "envGet (String)";
+    String value = getEnv("PATH");
+    assertThatIsFalse(value.isEmpty(), method, "");
+}   
+
+func void testGetEnvWithEmptyParameter(){
+    String method = "envGet";
+    String value = getEnv("");
+    assertThatIsTrue(value.isEmpty(), method, "");
+}   
+
+func void testGetEnvWithoutParameter(){
+    String method = "envGet";
+    String value = getEnv();
+    assertThatIsFalse(value.isEmpty(), method, "");
+}
+
+func void testArrayToClipString() {
+    String method = "arrayToClip (String)";
+    String[] a1 = { "Pierre", "Fermat" };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[Pierre, Fermat]", method, "");
+}
+
+func void testArrayToClipByte() {
+    String method = "arrayToClip (Byte)";
+    byte[] a1 = new byte[] { 5, 62 };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5, 62]", method, "");
+}
+
+func void testArrayToClipBoolean() {
+    String method = "arrayToClip (Boolean)";
+    boolean[] a1 = new boolean[] { true, false };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[true, false]", method, "");
+}
+
+func void testArrayToClipChart() {
+    String method = "arrayToClip (Chart)";
+    char[] a1 = new char[] { 'p', 's' };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[p, s]", method, "");
+}
+
+func void testArrayToClipFloat() {
+    String method = "arrayToClip (Float)";
+    float[] a1 = { 5.2f, 46.1f };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5.2, 46.1]", method, "");
+}
+
+func void testArrayToClipInt() {
+    String method = "arrayToClip (Int)";
+    int[] a1 = { 5, 4 };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5, 4]", method, "");
+}
+
+func void testArrayToClipLong() {
+    String method = "arrayToClip (Long)";
+    long[] a1 = { 56, 46464 };
+    arrayToClip(a1);   
+    assertThatStringEquals(clipboardGet(), "[56, 46464]", method, "");
+}
+
+func void testArrayToClipShort() {
+    String method = "arrayToClip (Short)";
+    short[] a1 = { 5, 2 };
+    arrayToClip(a1);
+    assertThatStringEquals(clipboardGet(), "[5, 2]", method, "");
+}
+//#END TESTS
+
+
+//Test suite.
+func void suite(){
+	testArrayAsListFunc();
+	testArrayBinarySearchByte();
+	testArrayBinarySearchChart();
+	testArrayBinarySearchDouble();
+	testArrayBinarySearchFloat();
+	testArrayBinarySearchInt();
+	testArrayBinarySearchLong();
+	testArrayBinarySearchShort();
+	testArrayCopyOfBoolean();
+	testArrayCopyOfBytes();
+	testArrayToStringBoolean();
+	testArrayToStringChar();
+	testArrayToStringDouble();
+	testArrayToStringFloat();
+	testArrayToStringInt();
+	testArrayToStringLong();
+	testArrayToStringShort();
+	testArrayToStringString();
+	testArrayEqualsBoolean();
+	testArrayEqualsByte();
+	testArrayEqualsChar();
+	testArrayEqualsDouble(); 
+	testArrayEqualsFloat(); 
+	testArrayEqualsInt();
+	testArrayEqualsLong();
+	testArrayEqualsShort();
+	testArrayEqualsString();
+	testClipboardPutAndGet();
+	testSetAndGetSpeed();
+	testGetEnvWithParameter();
+	testGetEnvWithEmptyParameter();
+	testGetEnvWithoutParameter();
+	testArrayToClipString();
+	testArrayToClipByte();
+	testArrayToClipBoolean();
+	testArrayToClipChart();
+	testArrayToClipFloat();
+	testArrayToClipInt();
+	testArrayToClipLong();
+	testArrayToClipShort();
+}
+
+suite();
+
+if(ok){
+	print("Far out! Everything passed!");
+	exit();
+} else {
+	print("Bummer! You have failing tests!. Errors count [%s]" % (toString(errCount)));
+	exit(1);
+}
