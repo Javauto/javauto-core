@@ -13,7 +13,7 @@ Javauto is a programming language for automation. Derived from Java, it is a cro
 * StackOverflow: questions with the [javauto](http://stackoverflow.com/questions/tagged/javauto) tag
 * Syntax highlighting and auto completion for Javauto files in [Notepad++](https://github.com/Javauto/javauto-notepad-plusplus) 
 * If you're looking to report a bug, please use the [issue tracker](https://github.com/Javauto/javauto-core/issues).
-* [Twitter account](https://twitter.com/_Javauto)
+* [Twitter account](https://twitter.com/JavautoL)
 
 #Projects Using Javauto
 
