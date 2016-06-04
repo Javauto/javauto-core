@@ -640,7 +640,7 @@ public class JavautoTest {
     @Test
     public void testHttpGetShouldBeReturnEmpty() {
 	Javauto javauto = new Javauto();
-	String url = "http://noerterfasdpeor.com";
+	String url = "http://sdafsdf.com/";
 	assertThat(javauto.httpGet(url)).isEmpty();
     }
 

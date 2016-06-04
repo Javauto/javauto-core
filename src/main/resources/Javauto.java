@@ -2082,8 +2082,7 @@ public class Javauto {
      *         [-1,-1]. If there is an error executing the search it will return
      *         [-3, -3].
      */
-    public int[] pixelSearch(int colorInt, int x1, int y1, int x2, int y2,
-	    int speed) {
+    public int[] pixelSearch(int colorInt, int x1, int y1, int x2, int y2, int speed) {
 	try {
 	    Color color = new Color(colorInt);
 	    Robot r = new Robot(); // create robot to capture the screen
